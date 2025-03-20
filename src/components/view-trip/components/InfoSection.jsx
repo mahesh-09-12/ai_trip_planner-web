@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "../../ui/button";
 import { RiShareForward2Fill } from "react-icons/ri";
-import { fetchPlaceImage } from "../../service/unsplashService";
 import { useTheme } from "../../custom/ThemeProvider";
 import { toast } from "sonner";
+import { fetchPlaceImage } from "@/components/service/unsplashService";
 
 const InfoSection = ({ tripDetails }) => {
   const { theme } = useTheme();
@@ -11,17 +11,17 @@ const InfoSection = ({ tripDetails }) => {
   useEffect(() => {
     if (!tripDetails?.tripData?.location) return;
 
-    const fetchImage = async () => {
-      try {
-        const url = await fetchPlaceImage(tripDetails.tripData.location);
-        setImageUrl(url);
-      } catch (error) {
-        console.error("Error fetching image:", error);
-      }
-    };
-
-    fetchImage();
+    fetchImage(tripDetails.tripData.location);
   }, [tripDetails?.tripData?.location]);
+
+  const fetchImage = async (location) => {
+    try {
+      const url = await fetchPlaceImage(location);
+      setImageUrl(url);
+    } catch (error) {
+      console.error("Error fetching image:", error);
+    }
+  };
 
   const handleShare = async () => {
     if (!tripDetails?.tripData) return;

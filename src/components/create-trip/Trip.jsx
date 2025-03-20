@@ -8,9 +8,6 @@ import {
 import { Button } from "../ui/button";
 import { toast } from "sonner";
 import { chatSession } from "../service/AIModel";
-import SignInDialog from "../ui/SignInDialog";
-import { useGoogleLogin } from "@react-oauth/google";
-import axios from "axios";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../service/firebaseConfig";
 import { VscLoading } from "react-icons/vsc";
@@ -20,7 +17,6 @@ import { useTheme } from "../custom/ThemeProvider";
 const Trip = () => {
   const { theme } = useTheme();
   const [selectedPlace, setSelectedPlace] = useState("");
-  const [dialogOpen, setDialogOpen] = useState(false);
   const [formData, setFormData] = useState({
     location: "",
     noOfDays: "",
@@ -40,37 +36,6 @@ const Trip = () => {
       }
     }
     setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const login = useGoogleLogin({
-    onSuccess: async (tokenRes) => {
-      if (!tokenRes?.access_token) {
-        toast.error("Authentication failed. Please try again.");
-        return;
-      }
-      await getUserDetails(tokenRes.access_token);
-    },
-    onError: (err) => {
-      console.error("Google Login Error:", err);
-      toast.error("Google sign-in failed. Please try again.");
-    },
-  });
-
-  const getUserDetails = async (accessToken) => {
-    try {
-      const { data } = await axios.get(
-        "https://www.googleapis.com/oauth2/v2/userinfo",
-        {
-          headers: { Authorization: `Bearer ${accessToken}` },
-        }
-      );
-      console.log("User Info:", data);
-      localStorage.setItem("user", JSON.stringify(data));
-      setDialogOpen(false);
-    } catch (error) {
-      console.error("Error fetching user info:", error);
-      toast.error("Failed to retrieve user details.");
-    }
   };
 
   const saveTripData = async (tripData) => {
@@ -99,12 +64,6 @@ const Trip = () => {
   };
 
   const createTrip = async () => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (!user) {
-      setDialogOpen(true);
-      return;
-    }
-
     const { location, noOfDays, budget, traveler } = formData;
     if (!location || !noOfDays || !budget || !traveler) {
       toast.error("Please provide all details!");
@@ -115,9 +74,8 @@ const Trip = () => {
     const FINAL_PROMPT = AI_PROMPT.replace("{location}", location)
       .replace("{totalDays}", noOfDays)
       .replace("{traveler}", traveler)
-      .replace("{budget}", budget);
-
-    console.log("FINAL PROMPT:", FINAL_PROMPT);
+      .replace("{budget}", budget)
+      .replace("{location}", location);
 
     try {
       const res = await chatSession.sendMessage(FINAL_PROMPT);
@@ -235,11 +193,6 @@ const Trip = () => {
           )}
         </Button>
       </div>
-      <SignInDialog
-        login={login}
-        dialogOpen={dialogOpen}
-        setDialogOpen={setDialogOpen}
-      />
     </div>
   );
 };

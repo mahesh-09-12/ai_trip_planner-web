@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fetchPlaceImage } from "../../service/unsplashService";
 import { useTheme } from "../../custom/ThemeProvider";
+import { fetchPlaceImage } from "@/components/service/unsplashService";
 
 const Hotels = ({ tripDetails }) => {
   const { theme } = useTheme();
   const [imageUrls, setImageUrls] = useState({});
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
     if (!tripDetails?.tripData?.hotels) return;
 
@@ -30,6 +31,7 @@ const Hotels = ({ tripDetails }) => {
 
     fetchImages();
   }, [tripDetails]);
+
   return (
     <div className="m-3">
       <h2 className="font-medium text-[1rem] sm:text-xl">

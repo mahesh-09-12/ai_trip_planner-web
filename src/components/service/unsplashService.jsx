@@ -13,11 +13,8 @@ export const fetchPlaceImage = async (place) => {
 
     if (response.data.results.length > 0) {
       return response.data.results[0].urls.regular;
-    } else {
-      return "https://via.placeholder.com/400";
     }
   } catch (error) {
     console.error("Error fetching image:", error);
-    return "https://via.placeholder.com/400";
   }
 };

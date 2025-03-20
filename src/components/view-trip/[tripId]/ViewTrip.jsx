@@ -30,7 +30,7 @@ const ViewTrip = () => {
 
       if (docSnap.exists()) {
         setTripDetails(docSnap.data());
-        console.log(docSnap.data());
+
         toast.success("Fetched data successfully!");
       } else {
         toast.error("No trip details found!");

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { fetchPlaceImage } from "../../service/unsplashService";
 import { useTheme } from "../../custom/ThemeProvider";
+import { fetchPlaceImage } from "@/components/service/unsplashService";
 
 const PlaceCard = ({ place }) => {
   const { theme } = useTheme();

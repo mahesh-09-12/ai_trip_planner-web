@@ -56,7 +56,6 @@ const Header = () => {
         }
       );
 
-      console.log("User Info:", data);
       localStorage.setItem("user", JSON.stringify(data));
       setDialogOpen(false);
     } catch (error) {
@@ -119,6 +118,22 @@ const Header = () => {
                   align="start"
                   sideOffset={5}
                 >
+                  <DropdownMenu.Item
+                    asChild
+                    onSelect={handleOpen}
+                    className={`p-2 cursor-pointer rounded-md block ${
+                      theme === "light"
+                        ? "hover:bg-gray-100"
+                        : "hover:bg-gray-600"
+                    }`}
+                  >
+                    <Link to="/">Home</Link>
+                  </DropdownMenu.Item>
+                  <DropdownMenu.Separator
+                    className={`h-px my-1 ${
+                      theme === "light" ? "bg-gray-200" : "bg-gray-500"
+                    }`}
+                  />
                   <DropdownMenu.Item
                     asChild
                     onSelect={handleOpen}

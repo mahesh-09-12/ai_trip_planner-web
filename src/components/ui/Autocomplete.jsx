@@ -18,7 +18,6 @@ const Autocomplete = ({ setSelectedPlace, handleInputChange }) => {
     try {
       const response = await axios.get(url);
       setResults(response.data);
-      console.log(response.data);
     } catch (error) {
       console.error("Error fetching places:", error);
     }
