@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const UNSPLASH_ACCESS_KEY = "_a0P89oEk9kgTMmlqCvRhw7UlkwKSfNCETkm8FPP_8I";
+const UNSPLASH_ACCESS_KEY = import.meta.env.VITE_UNSPLASH_ACCESS_KEY;
 
 export const fetchPlaceImage = async (place) => {
   try {
