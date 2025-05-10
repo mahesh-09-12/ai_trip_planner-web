@@ -3,7 +3,7 @@ import { Button } from "../../ui/button";
 import { RiShareForward2Fill } from "react-icons/ri";
 import { useTheme } from "../../custom/ThemeProvider";
 import { toast } from "sonner";
-import { fetchPlaceImage } from "@/components/service/unsplashService";
+import { fetchPlaceImage } from "@/components/service/pexelsService";
 
 const InfoSection = ({ tripDetails }) => {
   const { theme } = useTheme();

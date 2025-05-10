@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../../custom/ThemeProvider";
-import { fetchPlaceImage } from "@/components/service/unsplashService";
+import { fetchPlaceImage } from "@/components/service/pexelsService";
 
 const Hotels = ({ tripDetails }) => {
   const { theme } = useTheme();
