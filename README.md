@@ -24,9 +24,9 @@ Built using **React.js**, **Tailwind CSS**, **Firebase**, **Radix UI**, and the 
 | Layer | Tools / Libraries |
 |:------|:------------------|
 | Frontend | React.js, Tailwind CSS, Radix UI |
-| Backend | Firebase (Auth + Database) |
+| Backend | Firebase (Database) |
 | AI | Google Gemini API |
-| State Mgmt | React Context API |
+| State Management | React Context API |
 | Deployment | Vercel |
 
 ---
@@ -35,7 +35,7 @@ Built using **React.js**, **Tailwind CSS**, **Firebase**, **Radix UI**, and the 
 
 ### 1️⃣ Clone the repository
 
-git clone https://github.com/yourusername/ai-trip-planner.git
+git clone https://github.com/mahesh-09-12/ai_trip_planner-web
 
 cd ai-trip-planner
 
