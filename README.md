@@ -34,39 +34,54 @@ Built using **React.js**, **Tailwind CSS**, **Firebase**, **Radix UI**, and the 
 ## ⚙️ Installation and Setup
 
 ### 1️⃣ Clone the repository
+
 git clone https://github.com/yourusername/ai-trip-planner.git
+
 cd ai-trip-planner
 
 2️⃣ Install dependencies
+
 npm install
 
 3️⃣ Configure Environment Variables
+
 Create a .env file in the project root and add:
 
 env
 
 VITE_FIREBASE_API_KEY=your_firebase_api_key
+
 VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+
 VITE_FIREBASE_PROJECT_ID=your_project_id
+
 VITE_GEMINI_API_KEY=your_gemini_api_key
 
 4️⃣ Run the app
 
 npm run dev
+
 Visit http://localhost:5173 in your browser.
 
-📸 Screenshots
-Home Page	Trip Results
 
 🧩 Folder Structure
+
 src/
+
  ├── components/
+ 
  ├── pages/
+ 
  ├── context/
+ 
  ├── assets/
+ 
  ├── hooks/
+ 
  └── App.jsx
+ 
 💡 Future Improvements
+
 Add interactive maps using Google Maps API.
 
 Allow users to save and export travel itineraries.
@@ -74,7 +89,9 @@ Allow users to save and export travel itineraries.
 Integrate flight booking and cost estimation.
 
 🤝 Contributing
+
 Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 📄 License
+
 MIT License © 2025 Mahesh Gali
