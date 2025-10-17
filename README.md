@@ -1,12 +1,80 @@
-# React + Vite
+# 🧭 AI Trip Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered web application that helps users plan personalized trips by suggesting destinations, hotels, and itineraries based on their preferences.  
+Built using **React.js**, **Tailwind CSS**, **Firebase**, **Radix UI**, and the **Google Gemini API**.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
+🔗 [Visit the App](https://ai-trip-planner-web-psi.vercel.app)  
+💻 [View Source Code](https://github.com/mahesh-09-12/ai_trip_planner-web)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+- 🧠 **AI-Powered Suggestions:** Generates travel itineraries, destinations, and hotel options using the Google Gemini API.  
+- 🔐 **Google OAuth Authentication:** Seamless and secure login via Firebase.  
+- 🗺️ **Smart Planner:** Recommends places and activities based on user preferences.  
+- 🎨 **Modern UI/UX:** Responsive, minimal design built with Tailwind CSS and Radix UI.  
+- ☁️ **Cloud Data:** Stores user preferences and plans securely using Firebase.  
+
+---
+
+## 🛠️ Tech Stack
+| Layer | Tools / Libraries |
+|:------|:------------------|
+| Frontend | React.js, Tailwind CSS, Radix UI |
+| Backend | Firebase (Auth + Database) |
+| AI | Google Gemini API |
+| State Mgmt | React Context API |
+| Deployment | Vercel |
+
+---
+
+## ⚙️ Installation and Setup
+
+### 1️⃣ Clone the repository
+git clone https://github.com/yourusername/ai-trip-planner.git
+cd ai-trip-planner
+
+2️⃣ Install dependencies
+npm install
+
+3️⃣ Configure Environment Variables
+Create a .env file in the project root and add:
+
+env
+
+VITE_FIREBASE_API_KEY=your_firebase_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_GEMINI_API_KEY=your_gemini_api_key
+
+4️⃣ Run the app
+
+npm run dev
+Visit http://localhost:5173 in your browser.
+
+📸 Screenshots
+Home Page	Trip Results
+
+🧩 Folder Structure
+src/
+ ├── components/
+ ├── pages/
+ ├── context/
+ ├── assets/
+ ├── hooks/
+ └── App.jsx
+💡 Future Improvements
+Add interactive maps using Google Maps API.
+
+Allow users to save and export travel itineraries.
+
+Integrate flight booking and cost estimation.
+
+🤝 Contributing
+Contributions are welcome! Feel free to open an issue or submit a pull request.
+
+📄 License
+MIT License © 2025 Mahesh Gali
