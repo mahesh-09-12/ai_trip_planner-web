@@ -1,7 +1,7 @@
 # 🧭 AI Trip Planner
 
 An AI-powered web application that helps users plan personalized trips by suggesting destinations, hotels, and itineraries based on their preferences.  
-Built using **React.js**, **Tailwind CSS**, **Firebase**, **Radix UI**, and the **Google Gemini API**.
+Built using **React.js**, **Tailwind CSS**,**Google OAuth**. **Firebase**, **Radix UI**, and the **Google Gemini API**.
 
 ---
 
